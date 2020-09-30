@@ -10,7 +10,7 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello ema-john-server working fine");
 });
 
 client.connect((err) => {
